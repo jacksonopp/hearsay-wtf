@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Did Hearsay Cause This?</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1 class="question">Did Hearsay cause this?</h1>
+
+    <div class="answer" id="answer">?</div>
+
+    <form id="blameForm">
+      <label for="problem">Describe the problem you're experiencing:</label>
+      <textarea id="problem" name="problem" placeholder="e.g. the page took 45 minutes to load, then ate my draft, then logged me out for spite" rows="4" required></textarea>
+      <button type="submit">Was it Hearsay?</button>
+    </form>
+
+    <div class="result" id="result" hidden>
+      <p class="verdict">Yes. Hearsay caused this.</p>
+      <p class="echo" id="echo"></p>
+      <p class="probability" id="probability"></p>
+      <button id="again">Ask about another problem</button>
+    </div>
+
+    <footer>
+      <p>Not affiliated with, endorsed by, or on speaking terms with Hearsay.</p>
+      <p class="tiny">Inspired by <a href="https://shouldiblamecaching.com" target="_blank" rel="noopener">shouldiblamecaching.com</a>. It was always the CMS.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

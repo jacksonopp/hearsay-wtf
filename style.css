@@ -1,0 +1,165 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d0d0f;
+  --panel: #17171b;
+  --border: #2a2a30;
+  --text: #f2f2f0;
+  --muted: #9a9aa2;
+  --hearsay-red: #e0392b;
+  --hearsay-red-dim: #7a1f18;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% -10%, #241213 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 2rem 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 620px;
+  text-align: center;
+}
+
+.question {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.answer {
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--hearsay-red);
+  line-height: 1;
+  margin: 0.5rem 0 2rem;
+  text-shadow: 0 0 40px rgba(224, 57, 43, 0.35);
+  transition: transform 0.15s ease;
+}
+
+.answer.slam {
+  transform: scale(1.15);
+}
+
+form {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  background: #0d0d10;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+textarea:focus {
+  outline: 2px solid var(--hearsay-red-dim);
+  outline-offset: 1px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: var(--hearsay-red);
+  color: #fff;
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+
+button:hover {
+  background: #ff4433;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.result {
+  margin-top: 1.5rem;
+  background: linear-gradient(180deg, rgba(224, 57, 43, 0.12), transparent);
+  border: 1px solid var(--hearsay-red-dim);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.result[hidden] {
+  display: none;
+}
+
+.verdict {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--hearsay-red);
+  margin: 0 0 0.75rem;
+}
+
+.echo {
+  color: var(--text);
+  font-style: italic;
+  margin: 0 0 0.75rem;
+  opacity: 0.9;
+}
+
+.probability {
+  font-family: "SF Mono", ui-monospace, Menlo, monospace;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.25rem;
+}
+
+#again {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+}
+
+#again:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+footer {
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+.tiny {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
