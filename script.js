@@ -104,7 +104,7 @@ copyLinkBtn.addEventListener('click', async () => {
     copyLinkBtn.textContent = 'Copy failed — copy from address bar';
   }
   setTimeout(() => {
-    copyLinkBtn.textContent = 'Copy share link';
+    copyLinkBtn.textContent = 'Share response';
     copyLinkBtn.classList.remove('copied');
   }, 2000);
 });
