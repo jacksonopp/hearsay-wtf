@@ -163,6 +163,31 @@ button:active {
   color: var(--hearsay-red);
 }
 
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, 0.5rem);
+  background: var(--panel);
+  border: 1px solid var(--hearsay-red);
+  color: var(--text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 footer {
   margin-top: 2.5rem;
   color: var(--muted);

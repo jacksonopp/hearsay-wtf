@@ -6,6 +6,7 @@ const echo = document.getElementById('echo');
 const probability = document.getElementById('probability');
 const againBtn = document.getElementById('again');
 const copyLinkBtn = document.getElementById('copyLink');
+const toast = document.getElementById('toast');
 
 const notes = [
   "Not the cache. Not mercury retrograde. Hearsay.",
@@ -25,6 +26,15 @@ function randomNoteIndex() {
 
 function randomHighConfidence() {
   return (99 + Math.random()).toFixed(4);
+}
+
+let toastTimeout;
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add('visible');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => toast.classList.remove('visible'), 2500);
 }
 
 function showResult(problem, noteIndex, confidence) {
@@ -98,15 +108,12 @@ againBtn.addEventListener('click', () => {
 copyLinkBtn.addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(window.location.href);
-    copyLinkBtn.textContent = 'Link copied!';
+    showToast('Copied to clipboard!');
     copyLinkBtn.classList.add('copied');
+    setTimeout(() => copyLinkBtn.classList.remove('copied'), 2000);
   } catch {
-    copyLinkBtn.textContent = 'Copy failed — copy from address bar';
+    showToast('Copy failed — copy from address bar');
   }
-  setTimeout(() => {
-    copyLinkBtn.textContent = 'Share response';
-    copyLinkBtn.classList.remove('copied');
-  }, 2000);
 });
 
 loadFromQuery();
