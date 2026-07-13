@@ -1,0 +1,13 @@
+{
+  "name": "hearsay-wtf",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "workers-og": "0.0.27",
+    "wrangler": "4.110.0"
+  }
+}
