@@ -137,15 +137,30 @@ button:active {
   margin: 0 0 1.25rem;
 }
 
-#again {
+.result-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+#again,
+#copyLink {
+  flex: 1;
+  min-width: 10rem;
   background: transparent;
   border: 1px solid var(--border);
   color: var(--text);
   font-weight: 600;
 }
 
-#again:hover {
+#again:hover,
+#copyLink:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+#copyLink.copied {
+  border-color: var(--hearsay-red);
+  color: var(--hearsay-red);
 }
 
 footer {
