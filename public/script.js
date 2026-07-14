@@ -8,6 +8,8 @@ const againBtn = document.getElementById('again');
 const copyLinkBtn = document.getElementById('copyLink');
 const toast = document.getElementById('toast');
 
+const MAX_PROBLEM_LENGTH = 200;
+
 const notes = [
   "Not the cache. Not mercury retrograde. Hearsay.",
   "It could have been your code. It wasn't. It was Hearsay.",
@@ -71,7 +73,7 @@ function loadFromQuery() {
     return;
   }
 
-  const problem = params.get('problem') ?? '';
+  const problem = (params.get('problem') ?? '').slice(0, MAX_PROBLEM_LENGTH);
   const parsedIndex = parseInt(params.get('note'), 10);
   const noteIndex = Number.isInteger(parsedIndex)
     ? ((parsedIndex % notes.length) + notes.length) % notes.length
@@ -86,7 +88,7 @@ function loadFromQuery() {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const problem = problemInput.value.trim();
+  const problem = problemInput.value.trim().slice(0, MAX_PROBLEM_LENGTH);
   const noteIndex = randomNoteIndex();
   const confidence = randomHighConfidence();
 
