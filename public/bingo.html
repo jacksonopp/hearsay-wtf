@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hearsay Blame Bingo</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hearsay Blame Bingo">
+<meta property="og:description" content="Mark the square when Hearsay does it again. Get five in a row.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/bingo.css">
+</head>
+<body>
+  <main class="bingo-main">
+    <h1 class="question">Hearsay Blame Bingo</h1>
+    <p class="bingo-subtitle">Mark a square every time it happens. Five in a row wins.</p>
+
+    <div id="board" class="board" aria-live="off"></div>
+
+    <div id="bingoBanner" class="bingo-banner" hidden>BINGO!</div>
+
+    <div class="result-actions bingo-actions">
+      <button id="copyRoomLink" type="button">Share this board</button>
+      <button id="closeRoom" type="button" hidden>Close room</button>
+    </div>
+
+    <p id="roomStatus" class="bingo-status"></p>
+
+    <footer>
+      <p><a href="/">Back to blaming Hearsay directly</a></p>
+    </footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/bingo.js"></script>
+</body>
+</html>
