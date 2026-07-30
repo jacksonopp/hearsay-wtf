@@ -1,5 +1,6 @@
 const form = document.getElementById('blameForm');
 const problemInput = document.getElementById('problem');
+const honeypotInput = document.getElementById('website');
 const answer = document.getElementById('answer');
 const result = document.getElementById('result');
 const echo = document.getElementById('echo');
@@ -87,6 +88,8 @@ function loadFromQuery() {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  if (honeypotInput.value.trim()) return;
 
   const problem = problemInput.value.trim().slice(0, MAX_PROBLEM_LENGTH);
   const noteIndex = randomNoteIndex();

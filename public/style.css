@@ -79,6 +79,14 @@ textarea {
   font-family: inherit;
 }
 
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 textarea:focus {
   outline: 2px solid var(--hearsay-red-dim);
   outline-offset: 1px;
